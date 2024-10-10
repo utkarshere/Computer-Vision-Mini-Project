@@ -8,8 +8,6 @@ def av_pix(img, circles, size):
         col = np.mean(img[coords[1]-size:coords[1]+size,coords[0]-size:coords[0]+size])
         av_value.append(col)
     return av_value
-
-
 def get_radius(circles):
     radius = []
     for coords in circles[0,:]:
@@ -29,7 +27,6 @@ for i in circles[0,:]:
     cv2.circle(original_image,(i[0],i[1]),2,(0,0,255),3)
     # cv2.putText(original_image, str(count), (i[0], i[1]), cv2.FONT_HERSHEY_SIMPLEX, 2, (0,0,0), 2)
     count += 1
-    
 radii = get_radius(circles)
 print(radii)
 
